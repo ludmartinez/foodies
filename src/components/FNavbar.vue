@@ -10,8 +10,8 @@
     </a>
 
     <ul
-      :class="[{ hidden: !menu }, 'lg:flex']"
-      class="col-span-12 lg:col-start-4 lg:col-span-8"
+      :class="[menu ? 'block' : 'hidden']"
+      class="menu col-span-12 lg:col-start-4 lg:col-span-8 lg:flex mx-n4 px-4 pt-6 pb-16 md:mx-n10 md:px-10 lg:m-0 lg:p-0"
     >
       <li class="menu-link">
         <a href="#">Acerca de</a>
@@ -41,23 +41,18 @@ export default {
 
 <style lang="postcss" scoped>
 .menu {
-  @apply block shadow-xl rounded-b-3xl  mx-n4 px-4 pt-6 pb-16;
+  @apply shadow-xl rounded-b-3xl;
 }
 
 .menu-link {
   @apply font-syne font-bold text-2xl mt-6;
 }
 
-@screen md {
-  .menu {
-    @apply mx-n10 px-10;
-  }
-}
-
 @screen lg {
   .menu {
-    @apply flex shadow-none m-0 p-0;
+    @apply shadow-none;
   }
+
   .menu-link {
     @apply text-lg mt-0 mr-8;
   }
