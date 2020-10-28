@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="{ 'bg-white': menu }"
-    class="grid grid-cols-12 w-full px-4 pt-12 md:px-10 md:pt-8 lg:px-20"
+    class="grid grid-cols-12 w-full px-4 pt-12 md:px-10 md:pt-8 lg:px-20 z-40"
   >
     <div class="col-span-11 lg:col-span-2">
       <img src="../assets/logo.png" alt="Foodies logo" />
