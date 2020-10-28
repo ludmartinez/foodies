@@ -6,11 +6,12 @@ module.exports = {
   purge: [],
   theme: {
     fontFamily: {
+      body: ["'Open Sans'", "sans-serif"],
       syne: ["Syne", "sans-serif"]
     },
     extend: {
       colors: {
-        mustard: "ffd600"
+        mustard: "#ffd600"
       },
       spacing: {
         n1: "-0.25rem",

@@ -3,3 +3,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+  p {
+    @apply font-body text-black opacity-50 text-lg;
+  }
+}
