@@ -11,7 +11,7 @@ export default {
 
   props: {
     text: {
-      type: Boolean,
+      type: String,
       required: true
     }
   }
