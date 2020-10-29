@@ -1,10 +1,14 @@
 <template>
   <nav
-    :class="{ 'bg-white': menu }"
-    class="grid grid-cols-12 w-full px-4 pt-12 md:px-10 md:pt-8 lg:px-20 z-40"
+    :class="[
+      menu || pageOffest ? 'bg-white rounded-b-3xl shadow-xl' : 'bg-transparent'
+    ]"
+    class="grid grid-cols-12 w-full px-4 pt-12 pb-4 md:px-10 md:pt-8 lg:px-20 z-40"
   >
     <div class="col-span-11 lg:col-span-2">
-      <img src="../assets/logo.png" alt="Foodies logo" />
+      <router-link :to="{ name: 'Home' }">
+        <img src="../assets/logo.png" alt="Foodies logo" />
+      </router-link>
     </div>
 
     <a @click="menu = !menu" class="col-span-1 flex justify-end lg:hidden">
@@ -16,9 +20,9 @@
       :class="[menu ? 'block' : 'hidden']"
       class="menu col-span-12 lg:col-start-5 lg:col-span-6 lg:flex mx-n4 px-4 pt-6 pb-20 md:mx-n10 md:px-10 lg:p-0"
     >
-      <li class="menu-link">
-        <a href="#">Acerca de</a>
-      </li>
+      <router-link to="#about-us" class="menu-link">
+        Acerca de
+      </router-link>
       <li class="menu-link">
         <a href="#">Restaurantes</a>
       </li>
@@ -37,14 +41,30 @@ export default {
   name: "FNavbar",
 
   data: () => ({
-    menu: false
-  })
+    menu: false,
+
+    pageOffest: 0
+  }),
+
+  created() {
+    window.addEventListener("scroll", this.getPageOffeset);
+  },
+
+  destroyed() {
+    window.removeEventListener("scroll", this.getPageOffeset);
+  },
+
+  methods: {
+    getPageOffeset() {
+      this.pageOffest = window.pageYOffset;
+    }
+  }
 };
 </script>
 
 <style lang="postcss" scoped>
 .menu {
-  @apply shadow-xl rounded-b-3xl;
+  @apply rounded-b-3xl;
 }
 
 .menu-link {
