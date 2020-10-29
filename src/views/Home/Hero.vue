@@ -43,7 +43,7 @@ export default {
   background-position: right -4rem;
   background-size: contain;
   background-repeat: no-repeat;
-  @apply pt-20 pb-12 px-4 mb-12;
+  @apply pt-20 pb-12 px-4;
 }
 
 .title-mark {
@@ -54,7 +54,7 @@ export default {
 @screen md {
   .hero {
     background-position: top right;
-    @apply px-10 pt-32;
+    @apply px-10 pt-32 mb-12;
   }
 }
 

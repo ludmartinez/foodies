@@ -6,6 +6,6 @@
 
 @layer base {
   p {
-    @apply font-body text-black opacity-50 text-lg;
+    @apply font-body text-black opacity-50 text-base;
   }
 }
