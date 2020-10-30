@@ -6,7 +6,7 @@
         Don't miss out on our great offers & Receive deals from all our top
         restaurants via e-mail.
       </p>
-      <form>
+      <form @submit.prevent="handleSubmit">
         <label for="name-input" id="name-label">
           Nombre y Apellido
           <input
@@ -16,6 +16,7 @@
             ref="name-input"
             @focus="setActive"
             @blur="setInactive"
+            v-model="contactForm.name"
           />
         </label>
         <label for="email-input" id="email-label">
@@ -28,6 +29,7 @@
             placeholder="j.doe@correo.com"
             @focus="setActive"
             @blur="setInactive"
+            v-model="contactForm.email"
           />
         </label>
         <label for="message-input" id="message-label">
@@ -40,12 +42,21 @@
             placeholder="El día de ahora mi experiencia fue..."
             @focus="setActive"
             @blur="setInactive"
+            v-model="contactForm.message"
           ></textarea>
         </label>
         <div
           class="flex justify-center lg:row-start-3 lg:col-span-full lg:justify-end lg:items-start"
         >
-          <button class="button" type="submit">Enviar comentarios</button>
+          <button class="button flex flex-col items-center" type="submit">
+            Enviar comentarios
+            <img
+              v-if="loading"
+              src="../../assets/images/loading.svg"
+              alt="loading"
+              class="animate-spin"
+            />
+          </button>
         </div>
       </form>
     </div>
@@ -55,6 +66,8 @@
 
 <script>
 import Thanks from "./Thanks.vue";
+import contact from "../../api/contact";
+
 export default {
   name: "ContactUs",
 
@@ -62,6 +75,12 @@ export default {
 
   data() {
     return {
+      contactForm: {
+        email: "",
+        message: "",
+        name: ""
+      },
+      loading: false,
       mailSent: false
     };
   },
@@ -70,8 +89,23 @@ export default {
     setActive(event) {
       this.$refs[event.target.id].parentNode.classList.add("active");
     },
+
     setInactive(event) {
       this.$refs[event.target.id].parentNode.classList.remove("active");
+    },
+
+    async handleSubmit() {
+      try {
+        this.loading = true;
+        const response = await contact(this.contactForm);
+        if (response.status === 200) {
+          this.mailSent = true;
+        }
+      } catch (error) {
+        console.error(error.message);
+      } finally {
+        this.loading = false;
+      }
     }
   }
 };
@@ -123,6 +157,17 @@ label.active textarea {
   @apply border-mustard outline-none;
 }
 
+label.error,
+label.error input,
+label.error textarea {
+  @apply text-ketchup;
+}
+
+label.error input,
+label.error textarea {
+  @apply border-ketchup outline-none;
+}
+
 ::placeholder {
   @apply font-body text-base;
   color: #595959;
@@ -146,9 +191,6 @@ label.active textarea {
 @screen lg {
   #contact-us {
     @apply px-40 pb-24;
-    /* padding-left: 278px;
-    padding-right: 278px; */
-    /* padding-bottom: 112px; */
   }
 
   form {
