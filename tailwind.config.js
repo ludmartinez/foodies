@@ -13,7 +13,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        mustard: "#ffd600"
+        mustard: "#ffd600",
+        ketchup: "#ff2c2c"
       },
       spacing: {
         n1: "-0.25rem",
