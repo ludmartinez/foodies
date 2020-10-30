@@ -52,7 +52,7 @@ export default {
 }
 
 .slogan__text {
-  @apply text-5xl font-black leading-10 text-right text-white opacity-100 uppercase;
+  @apply text-3xl font-optiedgar font-bold leading-8 text-right text-white opacity-100 uppercase;
   @apply w-11/12;
 }
 
@@ -85,6 +85,10 @@ export default {
 
   .container-left .slogan {
     @apply py-16;
+  }
+
+  .slogan__text {
+    @apply w-full;
   }
 
   .container-right {

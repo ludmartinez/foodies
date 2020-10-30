@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: ["'Open Sans'", "sans-serif"],
+      optiedgar: ["optiedgar", "san-serif"],
       roboto: ["Roboto", "sans-serif"],
       syne: ["Syne", "sans-serif"]
     },

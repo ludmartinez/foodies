@@ -77,7 +77,7 @@ export default {
 }
 
 h2 {
-  @apply text-5xl font-bold text-center;
+  @apply text-4xl font-optiedgar font-bold text-center;
   @apply leading-none;
 }
 

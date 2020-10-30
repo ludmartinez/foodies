@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "optiedgar";
+    src: url("./fonts/optiedgarbold-extended-webfont.woff2") format("woff2"),
+      url("./fonts/optiedgarbold-extended-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+
   p {
     @apply font-body text-black opacity-50 text-base;
   }

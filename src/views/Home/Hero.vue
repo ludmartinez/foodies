@@ -9,7 +9,7 @@
     />
     <div class="mt-10 mx-1 md:w-3/6 lg:w-3/6 lg:mt-10 md:mt-0">
       <h1
-        class="relative hero-title text-4xl font-black leading-10 tracking-wide md:text-5xl"
+        class="relative font-optiedgar text-3xl font-bold leading-10 md:text-4xl"
       >
         Un nuevo
         <br />
