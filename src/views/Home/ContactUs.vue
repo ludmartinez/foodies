@@ -175,7 +175,7 @@ label.error textarea {
 
 @screen md {
   #contact-us {
-    @apply px-16;
+    @apply px-16 pt-24;
     padding-bottom: 368px;
   }
 
