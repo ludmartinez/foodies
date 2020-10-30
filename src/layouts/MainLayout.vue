@@ -1,6 +1,10 @@
 <template>
   <div class="relative">
-    <f-navbar v-if="navbar" class="fixed" />
+    <f-navbar
+      v-if="navbar"
+      :dark="$route.name === 'Menu' ? true : false"
+      class="fixed"
+    />
     <slot />
     <f-footer />
   </div>
