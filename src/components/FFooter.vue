@@ -1,5 +1,18 @@
 <template>
   <footer>
+    <div class="container-up">
+      <router-link :to="{ name: 'Home' }">
+        <img src="../assets/foodies.svg" alt="Foodies logo" />
+      </router-link>
+      <div class="app-links">
+        <router-link to="#" class="w-32 mx-1">
+          <img src="../assets/images/app_store.png" alt="App Store" />
+        </router-link>
+        <router-link to="#" class="w-32 mx-1">
+          <img src="../assets/images/google_play.png" alt="Google Play" />
+        </router-link>
+      </div>
+    </div>
     <ul class="links-list">
       <li class="link-item"><a href="#">Conoce nuestras sucursales</a></li>
       <li class="link-item"><a href="#">Acerca de</a></li>
@@ -21,6 +34,15 @@ footer {
   @apply px-4 pb-12;
 }
 
+.container-up {
+  @apply flex flex-col justify-center items-center;
+  @apply mb-5;
+}
+
+.container-up .app-links {
+  @apply flex justify-center mt-5 w-full;
+}
+
 footer .links-list {
   @apply pt-2;
   @apply flex flex-col items-center;
@@ -37,6 +59,14 @@ footer .links-list {
     @apply px-6 pb-16;
   }
 
+  .container-up {
+    @apply flex flex-row justify-between items-center;
+  }
+
+  .container-up .app-links {
+    @apply flex justify-end mt-0;
+  }
+
   footer .links-list {
     @apply grid grid-cols-3;
     @apply pt-4;
@@ -45,6 +75,12 @@ footer .links-list {
   .links-list .link-item {
     @apply mt-4;
     @apply flex justify-center h-full;
+  }
+}
+
+@screen lg {
+  .container-up {
+    @apply mx-12;
   }
 }
 
