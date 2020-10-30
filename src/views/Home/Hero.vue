@@ -22,7 +22,7 @@
         Estamos a punto de descubrir un mundo lleno de sabores y de emociones
         inigualables.
       </p>
-      <f-action-btn text="Encuéntranos" class="mt-8" />
+      <f-action-btn to="#contact-us" text="Encuéntranos" class="mt-8" />
     </div>
   </section>
 </template>

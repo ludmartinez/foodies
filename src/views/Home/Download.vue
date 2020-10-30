@@ -119,11 +119,5 @@ export default {
       top: -5rem;
     }
   }
-
-  @screen xl {
-    .benefits-container {
-
-    }
-  }
 }
 </style>

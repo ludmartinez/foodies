@@ -20,7 +20,7 @@
         consequat culpa consectetur Lorem. Reprehenderit dolore culpa irure
         eiusmod minim occaecat et id minim ullamco.
       </p>
-      <f-action-btn text="Contáctanos" class="mt-6 md:mt-12" />
+      <f-action-btn to="#contact-us" text="Contáctanos" class="mt-6 md:mt-12" />
     </div>
   </section>
 </template>
