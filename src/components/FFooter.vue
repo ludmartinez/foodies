@@ -14,11 +14,21 @@
       </div>
     </div>
     <ul class="links-list">
-      <li class="link-item"><a href="#">Conoce nuestras sucursales</a></li>
-      <li class="link-item"><a href="#">Acerca de</a></li>
-      <li class="link-item"><a href="#">Conoce nuestras sucursales</a></li>
-      <li class="link-item"><a href="#">¿Qué hablan de nosotros?</a></li>
-      <li class="link-item"><a href="#">Contáctanos</a></li>
+      <li class="link-item hover:bg-mustard">
+        <a href="#restaurants">Conoce nuestras sucursales</a>
+      </li>
+      <li class="link-item hover:bg-mustard">
+        <a href="#about-us">Acerca de</a>
+      </li>
+      <li class="link-item hover:bg-mustard">
+        <a href="#restaurants">Conoce nuestras sucursales</a>
+      </li>
+      <li class="link-item hover:bg-mustard">
+        <a href="#testimonials">¿Qué hablan de nosotros?</a>
+      </li>
+      <li class="link-item hover:bg-mustard">
+        <a href="#contact-us">Contáctanos</a>
+      </li>
     </ul>
   </footer>
 </template>
