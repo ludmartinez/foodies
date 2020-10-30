@@ -1,7 +1,9 @@
 <template>
   <nav
     :class="[
-      menu || pageOffest ? 'bg-white rounded-b-3xl shadow-xl' : 'bg-transparent'
+      menu || (pageOffest && !dark)
+        ? 'bg-white rounded-b-3xl shadow-xl'
+        : 'bg-transparent'
     ]"
     class="grid grid-cols-12 w-full px-4 pt-12 pb-4 md:px-10 md:pt-8 lg:px-20 z-40"
   >
@@ -49,16 +51,32 @@
       :class="[menu ? 'flex flex-col' : 'hidden']"
       class="menu col-span-12 lg:col-start-5 lg:col-span-6 lg:flex mx-n4 px-4 pt-6 pb-20 md:mx-n10 md:px-10 lg:p-0"
     >
-      <router-link to="#about-us" class="menu-link">
+      <router-link
+        to="#about-us"
+        class="menu-link"
+        :class="[logoColor === 'white' ? 'text-white' : 'text-black']"
+      >
         Acerca de
       </router-link>
-      <router-link to="#restaurants" class="menu-link">
+      <router-link
+        to="#restaurants"
+        class="menu-link"
+        :class="[logoColor === 'white' ? 'text-white' : 'text-black']"
+      >
         Restaurantes
       </router-link>
-      <router-link :to="{ name: 'Menu' }" class="menu-link">
+      <router-link
+        :to="{ name: 'Menu' }"
+        class="menu-link"
+        :class="[logoColor === 'white' ? 'text-white' : 'text-black']"
+      >
         Menú
       </router-link>
-      <router-link to="#contact-us" class="menu-link">
+      <router-link
+        to="#contact-us"
+        class="menu-link"
+        :class="[logoColor === 'white' ? 'text-white' : 'text-black']"
+      >
         Contáctanos
       </router-link>
     </ul>

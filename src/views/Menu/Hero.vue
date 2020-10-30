@@ -1,8 +1,14 @@
 <template>
-  <section class="bg-black text-white pt-32 px-4 pb-24">
-    <img src="../../assets/images/hero_hamburger2.png" alt="hamburguesa" />
+  <section
+    class="bg-black text-white pt-32 px-4 pb-24 md:px-12 md:flex md:items-center lg:px-24"
+  >
+    <img
+      src="../../assets/images/hero_hamburger2.png"
+      alt="hamburguesa"
+      class="md:order-2 md:w-3/6"
+    />
     <div class="relative z-10">
-      <h1 class="font-optiedgar font-bold text-3xl leading-none">
+      <h1 class="font-optiedgar font-bold text-3xl leading-none lg:text-4xl">
         Cada sabor es una nueva <span class="text-black">experiencia</span>
       </h1>
       <div
