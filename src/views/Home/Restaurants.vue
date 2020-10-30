@@ -55,6 +55,16 @@
         </div>
       </div>
       <div class="p-4 md:px-12">
+        <article v-if="!locations.length" class="p-20">
+          <img
+            src="../../assets/images/VXpIXK 2.png"
+            alt="no hay resultados"
+            class="mx-auto"
+          />
+          <h3 class="font-syne font-bold text-lg mb-1 text-center">
+            No hemos encontrado lo que buscas
+          </h3>
+        </article>
         <article
           v-for="location in locations"
           :key="location.id"
@@ -92,7 +102,7 @@ export default {
       type: "takeaway",
       query: "",
       loading: false,
-      locations: null,
+      locations: [],
       selectedLocation: null
     };
   },
