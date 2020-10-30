@@ -88,7 +88,7 @@ export default {
   }
 
   .slogan__text {
-    @apply w-full;
+    @apply w-11/12;
   }
 
   .container-right {
