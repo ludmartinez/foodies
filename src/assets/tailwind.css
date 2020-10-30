@@ -17,3 +17,10 @@
     @apply font-body text-black opacity-50 text-base;
   }
 }
+
+@layer components {
+  .button {
+    @apply bg-mustard text-black font-body font-bold text-center rounded;
+    @apply py-3 px-6 mt-10;
+  }
+}

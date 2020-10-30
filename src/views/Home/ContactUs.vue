@@ -1,61 +1,69 @@
 <template>
   <section id="contact-us">
-    <h2>Cuéntanos tu experiencia</h2>
-    <p>
-      Don't miss out on our great offers & Receive deals from all our top
-      restaurants via e-mail.
-    </p>
-    <form>
-      <label for="name-input" id="name-label">
-        Nombre y Apellido
-        <input
-          type="text"
-          id="name-input"
-          placeholder="John Doe"
-          ref="name-input"
-          @focus="setActive"
-          @blur="setInactive"
-        />
-      </label>
-      <label for="email-input" id="email-label">
-        Correo electrónico
-        <input
-          type="email"
-          name=""
-          id="email-input"
-          ref="email-input"
-          placeholder="j.doe@correo.com"
-          @focus="setActive"
-          @blur="setInactive"
-        />
-      </label>
-      <label for="message-input" id="message-label">
-        Mensaje
-        <textarea
-          name="message"
-          id="message-input"
-          ref="message-input"
-          rows="5"
-          placeholder="El día de ahora mi experiencia fue..."
-          @focus="setActive"
-          @blur="setInactive"
-        ></textarea>
-      </label>
-      <div
-        class="flex justify-center lg:row-start-3 lg:col-span-full lg:justify-end lg:items-start"
-      >
-        <button class="button" type="submit">Enviar comentarios</button>
-      </div>
-    </form>
+    <div v-if="!mailSent">
+      <h2>Cuéntanos tu experiencia</h2>
+      <p>
+        Don't miss out on our great offers & Receive deals from all our top
+        restaurants via e-mail.
+      </p>
+      <form>
+        <label for="name-input" id="name-label">
+          Nombre y Apellido
+          <input
+            type="text"
+            id="name-input"
+            placeholder="John Doe"
+            ref="name-input"
+            @focus="setActive"
+            @blur="setInactive"
+          />
+        </label>
+        <label for="email-input" id="email-label">
+          Correo electrónico
+          <input
+            type="email"
+            name=""
+            id="email-input"
+            ref="email-input"
+            placeholder="j.doe@correo.com"
+            @focus="setActive"
+            @blur="setInactive"
+          />
+        </label>
+        <label for="message-input" id="message-label">
+          Mensaje
+          <textarea
+            name="message"
+            id="message-input"
+            ref="message-input"
+            rows="5"
+            placeholder="El día de ahora mi experiencia fue..."
+            @focus="setActive"
+            @blur="setInactive"
+          ></textarea>
+        </label>
+        <div
+          class="flex justify-center lg:row-start-3 lg:col-span-full lg:justify-end lg:items-start"
+        >
+          <button class="button" type="submit">Enviar comentarios</button>
+        </div>
+      </form>
+    </div>
+    <thanks v-else />
   </section>
 </template>
 
 <script>
+import Thanks from "./Thanks.vue";
 export default {
   name: "ContactUs",
 
+  components: { Thanks },
+
   data() {
-    return {};
+    return {
+      mailSent: false
+    };
   },
 
   methods: {
@@ -118,11 +126,6 @@ label.active textarea {
 ::placeholder {
   @apply font-body text-base;
   color: #595959;
-}
-
-.button {
-  @apply bg-mustard text-black font-body font-bold text-center rounded;
-  @apply py-3 px-6 mt-10;
 }
 
 @screen md {
