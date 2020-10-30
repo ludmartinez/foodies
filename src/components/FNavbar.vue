@@ -17,21 +17,21 @@
     </a>
 
     <ul
-      :class="[menu ? 'block' : 'hidden']"
+      :class="[menu ? 'flex flex-col' : 'hidden']"
       class="menu col-span-12 lg:col-start-5 lg:col-span-6 lg:flex mx-n4 px-4 pt-6 pb-20 md:mx-n10 md:px-10 lg:p-0"
     >
       <router-link to="#about-us" class="menu-link">
         Acerca de
       </router-link>
-      <li class="menu-link">
-        <a href="#">Restaurantes</a>
-      </li>
-      <li class="menu-link">
-        <a href="#">Menú</a>
-      </li>
-      <li class="menu-link">
-        <a href="#">Contáctanos</a>
-      </li>
+      <router-link to="#restaurants" class="menu-link">
+        Restaurantes
+      </router-link>
+      <router-link to="#" class="menu-link">
+        Menú
+      </router-link>
+      <router-link to="#contact-us" class="menu-link">
+        Contáctanos
+      </router-link>
     </ul>
   </nav>
 </template>
